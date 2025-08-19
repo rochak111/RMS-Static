@@ -73,6 +73,8 @@ body {
 
 /* Enhanced Body with Cultural Background Pattern */
 body {
+    /* overflow-x: hidden; */
+    /* Prevent horizontal scroll on body */
     color: var(--text);
     background:
         /* Traditional Newari window pattern overlay */
@@ -93,7 +95,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    position: relative;
+     position: relative;    
 }
 
 /* Enhanced Newari Architectural Pattern */
@@ -1281,141 +1283,166 @@ main {
     line-height: 1.7;
 }
 
-/* Enhanced Gallery Section */
+
+
+/* CRITICAL FIX: Remove any properties that could block scrolling */
 .gallery {
-    padding: 6rem 5%;
-    background:
-        /* Cultural mosaic pattern */
-        repeating-conic-gradient(from 30deg at 50px 50px,
-            rgba(139, 46, 46, 0.03) 0deg 60deg,
-            transparent 60deg 120deg,
-            rgba(200, 164, 77, 0.02) 120deg 180deg,
-            transparent 180deg 240deg),
+    padding: 4rem 3% 4rem;
+    position: relative;
+    background: repeating-conic-gradient(from 30deg at 50px 50px, rgba(139, 46, 46, 0.03) 0deg 60deg, transparent 60deg 120deg, rgba(200, 164, 77, 0.02) 120deg 180deg, transparent 180deg 240deg),
         radial-gradient(circle at 30% 70%, rgba(204, 41, 54, 0.04) 0%, transparent 60%),
         linear-gradient(180deg, rgba(246, 242, 234, 0.9), rgba(239, 231, 216, 0.85));
+    /* REMOVED: All overflow, height, and positioning properties that block scrolling */
+    width: 100%;
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
+}
+
+.gallery .heading {
+    text-align: center;
+    font-size: 3rem;
+    color: #8b2e2e;
+    margin-bottom: 2rem;
+    font-weight: 800;
     position: relative;
 }
 
-.gallery::before {
-    content: "";
+/* Category Filter Buttons */
+.category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.category-btn {
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, #b5532b, #8b2e2e);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 46, 46, 0.2);
+    position: relative;
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+.category-btn::before {
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 800px;
-    height: 800px;
-    background:
-        conic-gradient(from 0deg,
-            rgba(200, 164, 77, 0.02) 0deg 45deg,
-            transparent 45deg 90deg,
-            rgba(139, 46, 46, 0.015) 90deg 135deg,
-            transparent 135deg 180deg,
-            rgba(204, 41, 54, 0.02) 180deg 225deg,
-            transparent 225deg 270deg,
-            rgba(255, 140, 66, 0.015) 270deg 315deg,
-            transparent 315deg 360deg);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    animation: culturalMandala 40s linear infinite;
-    z-index: 0;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
 }
 
-@keyframes culturalMandala {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+.category-btn:hover::before {
+    left: 100%;
 }
 
+.category-btn.active {
+    background: linear-gradient(135deg, #d4af37, #c8a451);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+.category-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 46, 46, 0.3);
+}
+
+/* CRITICAL FIX: Ensure wrapper doesn't block scrolling */
+.gallery-wrapper {
+    position: relative;
+    width: 100%;
+    /* REMOVED: All overflow and max-width constraints */
+}
+
+/* CRITICAL FIX: Grid container - no overflow properties */
 .gallery .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
-    position: relative;
-    z-index: 1;
+    width: 100%;
+    padding: 1rem 0;
+    transition: all 0.5s ease;
+    /* REMOVED: All overflow, height, and positioning that could block scroll */
 }
 
+/* CRITICAL FIX: Box styling - minimal positioning */
 .gallery .box {
-    position: relative;
-    border-radius: 25px;
+    width: 100%;
+    height: 270px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow:
-        0 15px 40px rgba(139, 46, 46, 0.15),
-        0 0 0 2px rgba(200, 164, 77, 0.2);
-    transition: all var(--transition-cultural);
-    height: 350px;
-    border: 3px solid transparent;
+    box-shadow: 0 10px 30px rgba(139, 46, 46, 0.12), 0 0 0 1px rgba(200, 164, 77, 0.15);
+    transition: all 0.3s ease;
     background-clip: padding-box;
-}
+    position: relative;
 
-.gallery .box::before {
-    content: "";
-    position: absolute;
-    inset: -3px;
-    background:
-        linear-gradient(135deg,
-            var(--temple-gold) 0%,
-            var(--copper-patina) 25%,
-            var(--ceremonial-red) 50%,
-            var(--ritual-saffron) 75%,
-            var(--temple-gold) 100%);
-    border-radius: 25px;
-    z-index: -1;
     opacity: 0;
-    transition: opacity var(--transition-cultural);
-    animation: culturalGalleryBorder 6s ease-in-out infinite;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+    margin-bottom: 0.5rem;
+}
+.gallery .box:nth-child(odd) {
+    animation-delay: 0.1s;
 }
 
-@keyframes culturalGalleryBorder {
+.gallery .box:nth-child(even) {
+    animation-delay: 0.2s;
+}
 
-    0%,
-    100% {
-        filter: hue-rotate(0deg);
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-
-    50% {
-        filter: hue-rotate(30deg);
-    }
 }
 
-.gallery .box:hover::before {
-    opacity: 1;
-}
-
-.gallery .box:hover {
-    transform: scale(1.05) rotateY(3deg);
-    box-shadow:
-        0 25px 80px rgba(139, 46, 46, 0.25),
-        0 0 50px rgba(200, 164, 77, 0.4);
+.gallery .box.hidden {
+    display: none;
 }
 
 .gallery .box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: all var(--transition-slow);
+    transition: all 0.3s ease;
     filter: contrast(1.1) saturate(1.05);
+
+}
+
+/* CRITICAL FIX: Lighter hover effect that doesn't interfere with scrolling */
+.gallery .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(139, 46, 46, 0.15);
+    /* REMOVED: scale and z-index that could interfere */
 }
 
 .gallery .box:hover img {
-    transform: scale(1.15) rotate(1deg);
+    transform: scale(1.05);
     filter: contrast(1.2) saturate(1.2) brightness(1.1);
 }
-
 .gallery .box .content {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background:
-        linear-gradient(transparent, rgba(43, 26, 18, 0.95));
+    background: linear-gradient(transparent, rgba(43, 26, 18, 0.95));
     color: white;
-    padding: 3rem 2rem 2rem;
+    padding: 1.5rem;
     transform: translateY(100%);
-    transition: transform var(--transition-cultural);
-    /* border-top: 2px solid var(--temple-gold); */
+    transition: transform 0.3s ease;
+
 }
 
 .gallery .box:hover .content {
@@ -1424,22 +1451,190 @@ main {
 
 .gallery .box .content h3 {
     color: wheat;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
     font-weight: 800;
-    font-size: 1.3rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
 }
 
 .gallery .box .content p {
     color: rgba(246, 242, 234, 0.95);
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    font-size: 0.85rem;
 }
 
 .gallery .box .content .btn {
-    padding: 0.8rem 1.5rem;
+    padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
     border-radius: 20px;
+    background: linear-gradient(135deg, #d4af37, #c8a451);
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    pointer-events: auto;
+}
+
+.gallery .box .content .btn:hover {
+    background: linear-gradient(135deg, #c8a451, #b5932d);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem auto 0;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#see-more-btn,
+#see-less-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #b5532b, #8b2e2e);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(139, 46, 46, 0.2);
+    position: relative;
+    pointer-events: auto;
+}
+
+#see-more-btn:hover,
+#see-less-btn:hover {
+    background: linear-gradient(135deg, #742822, #5d1f1f);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 46, 46, 0.3);
+}
+
+#see-more-btn .arrow,
+#see-less-btn .arrow {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+#see-more-btn:hover .arrow {
+    transform: translateX(3px);
+}
+
+#see-less-btn:hover .arrow {
+    transform: translateX(-3px);
+}
+
+#see-less-btn {
+    display: none;
+}
+
+/* Category Badge */
+.category-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(212, 175, 55, 0.9);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+    z-index: 2;
+   
+}
+
+.category-badge.drinks {
+    background: rgba(139, 46, 46, 0.9);
+}
+
+/* CRITICAL: Ensure no element blocks scrolling */
+.gallery * {
+    /* Allow scrolling through all elements */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery {
+        padding: 4rem 3% 3rem;
+    }
+
+    .gallery .heading {
+        font-size: 2.5rem;
+    }
+
+    .category-filters {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .category-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .gallery .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .gallery .box {
+        height: 250px;
+    }
+
+    .button-container {
+        margin: 2rem auto 0;
+    }
+
+    #see-more-btn,
+    #see-less-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.2rem;
+    }
+
+    .gallery .box {
+        height: 240px;
+    }
+
+    .category-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* CRITICAL: Add padding to body to prevent any edge cases */
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* Add some content after gallery to test scrolling */
+.test-content {
+    height: 100vh;
+    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #333;
 }
 
 /* Enhanced Review Section */

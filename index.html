@@ -15,6 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <!-- header section starts -->
@@ -31,7 +32,8 @@
         <a href="#home">home</a>
         <a href="#speciality">speciality</a>
         <a href="#popular">popular</a>
-        <a href="#gallery">gallery</a>
+
+        <a href="#gallery">menu</a>
         <a href="#review">review</a>
         <a href="#order">order</a>
       </nav>
@@ -63,7 +65,7 @@
       </div>
 
       <!-- home section ends -->
-
+     
       <!-- speciality section starts -->
       <section class="speciality cultural-accent" id="speciality">
         <h1 class="heading">Our Speciality</h1>
@@ -160,7 +162,293 @@
       </section>
 
       <!-- speciality section ends -->
+<!-- Gallery section starts -->
+  <!-- Gallery section starts -->
+      <section class="gallery cultural-accent" id="gallery">
+        <h1 class="heading">Our Food Menu</h1>
 
+        <!-- Category Filter Buttons -->
+        <div class="category-filters">
+          <button class="category-btn active" data-category="all">
+            All Items
+          </button>
+          <button class="category-btn" data-category="food">Food</button>
+          <button class="category-btn" data-category="drinks">Drinks</button>
+        </div>
+
+        <div class="gallery-wrapper">
+          <div class="box-container" id="boxContainer">
+            <!-- Food Items -->
+            <div class="box fade-in" data-category="food">
+              <div class="category-badge">Food</div>
+              <img
+                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop"
+                alt="Delicious Pizza"
+              />
+              <div class="content">
+                <h3>Margherita Pizza</h3>
+                <p>
+                  Fresh mozzarella, tomato sauce, and basil on crispy thin
+                  crust. An Italian classic that never disappoints.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in" data-category="drinks">
+              <div class="category-badge drinks">Drinks</div>
+              <img
+                src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop"
+                alt="Fresh Smoothie"
+              />
+              <div class="content">
+                <h3>Tropical Smoothie</h3>
+                <p>
+                  Refreshing blend of mango, pineapple, and coconut. Perfect for
+                  a sunny day.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in" data-category="food">
+              <div class="category-badge">Food</div>
+              <img
+                src="https://images.unsplash.com/photo-1563379091339-03246963d29b?w=400&h=300&fit=crop"
+                alt="Chicken Biryani"
+              />
+              <div class="content">
+                <h3>Chicken Biryani</h3>
+                <p>
+                  Aromatic basmati rice with tender chicken pieces, cooked with
+                  traditional spices and herbs.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in" data-category="drinks">
+              <div class="category-badge drinks">Drinks</div>
+              <img
+                src="https://images.unsplash.com/photo-1571091655789-405eb7a3a3a8?w=400&h=300&fit=crop"
+                alt="Iced Coffee"
+              />
+              <div class="content">
+                <h3>Iced Coffee</h3>
+                <p>
+                  Rich espresso served over ice with a touch of cream. Perfect
+                  afternoon pick-me-up.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in" data-category="food">
+              <div class="category-badge">Food</div>
+              <img
+                src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop"
+                alt="Tandoori Chicken"
+              />
+              <div class="content">
+                <h3>Tandoori Chicken</h3>
+                <p>
+                  Succulent chicken marinated in yogurt and spices, cooked in
+                  traditional tandoor oven.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in" data-category="drinks">
+              <div class="category-badge drinks">Drinks</div>
+              <img
+                src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=300&fit=crop"
+                alt="Fresh Lemonade"
+              />
+              <div class="content">
+                <h3>Fresh Lemonade</h3>
+                <p>
+                  Freshly squeezed lemons with a hint of mint and sparkling
+                  water. Incredibly refreshing.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in" data-category="food">
+              <div class="category-badge">Food</div>
+              <img
+                src="https://images.unsplash.com/photo-1628294895950-9805252327bc?w=400&h=300&fit=crop"
+                alt="Gulab Jamun"
+              />
+              <div class="content">
+                <h3>Gulab Jamun</h3>
+                <p>
+                  Traditional Indian dessert made with milk solids, soaked in
+                  aromatic sugar syrup.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in" data-category="drinks">
+              <div class="category-badge drinks">Drinks</div>
+              <img
+                src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop"
+                alt="Masala Chai"
+              />
+              <div class="content">
+                <h3>Masala Chai</h3>
+                <p>
+                  Traditional spiced tea brewed with cardamom, ginger, and
+                  cinnamon. A warming delight.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <!-- Hidden items (initially hidden) -->
+            <div class="box fade-in hidden" data-category="food">
+              <div class="category-badge">Food</div>
+              <img
+                src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=400&h=300&fit=crop"
+                alt="Butter Chicken"
+              />
+              <div class="content">
+                <h3>Butter Chicken</h3>
+                <p>
+                  Creamy tomato-based curry with tender chicken pieces. Rich and
+                  flavorful comfort food.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in hidden" data-category="drinks">
+              <div class="category-badge drinks">Drinks</div>
+              <img
+                src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=300&fit=crop"
+                alt="Mango Lassi"
+              />
+              <div class="content">
+                <h3>Mango Lassi</h3>
+                <p>
+                  Creamy yogurt drink blended with sweet mangoes. A perfect
+                  cooling beverage.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in hidden" data-category="food">
+              <div class="category-badge">Food</div>
+              <img
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop"
+                alt="Thakali Set"
+              />
+              <div class="content">
+                <h3>Thakali Thali</h3>
+                <p>
+                  Traditional Nepalese meal with dal, rice, vegetables, and
+                  pickles served on a metal plate.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in hidden" data-category="drinks">
+              <div class="category-badge drinks">Drinks</div>
+              <img
+                src="https://images.unsplash.com/photo-1571297020667-406b22b1f04d?w=400&h=300&fit=crop"
+                alt="Fresh Juice"
+              />
+              <div class="content">
+                <h3>Fresh Orange Juice</h3>
+                <p>
+                  Freshly squeezed orange juice packed with vitamin C. Natural
+                  and healthy choice.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in hidden" data-category="food">
+              <div class="category-badge">Food</div>
+              <img
+                src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop"
+                alt="Pani Puri"
+              />
+              <div class="content">
+                <h3>Pani Puri</h3>
+                <p>
+                  Crispy hollow shells filled with spicy tamarind water,
+                  potatoes, and chickpeas.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in hidden" data-category="drinks">
+              <div class="category-badge drinks">Drinks</div>
+              <img
+                src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400&h=300&fit=crop"
+                alt="Green Tea"
+              />
+              <div class="content">
+                <h3>Green Tea</h3>
+                <p>
+                  Antioxidant-rich green tea with a delicate flavor. Perfect for
+                  health-conscious customers.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in hidden" data-category="food">
+              <div class="category-badge">Food</div>
+              <img
+                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop"
+                alt="Pasta"
+              />
+              <div class="content">
+                <h3>Creamy Pasta</h3>
+                <p>
+                  Al dente pasta tossed in rich cream sauce with herbs and
+                  parmesan cheese.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+
+            <div class="box fade-in hidden" data-category="drinks">
+              <div class="category-badge drinks">Drinks</div>
+              <img
+                src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&h=300&fit=crop"
+                alt="Milkshake"
+              />
+              <div class="content">
+                <h3>Chocolate Milkshake</h3>
+                <p>
+                  Rich and creamy chocolate milkshake topped with whipped cream
+                  and chocolate shavings.
+                </p>
+                <a href="#order" class="btn">Order Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button container -->
+        <div class="button-container">
+          <button id="see-more-btn">
+            See More Items <span class="arrow">→</span>
+          </button>
+          <button id="see-less-btn">
+            <span class="arrow">←</span> Show Less
+          </button>
+        </div>
+      </section>
+      <!-- Gallery section ends -->
       <!-- popular section starts -->
       <section class="popular cultural-accent" id="popular">
         <h1 class="heading">Most Popular Foods</h1>
@@ -233,7 +521,10 @@
           </div>
           <div class="box fade-in">
             <span class="price">Rs.20-Rs.55</span>
-            <img src="/images/chef_special_friedrice.jpeg" alt="Chef Special Fried Rice" />
+            <img
+              src="/images/chef_special_friedrice.jpeg"
+              alt="Chef Special Fried Rice"
+            />
             <h3>Chef Special Fried Rice</h3>
             <div class="stars">
               <i class="fas fa-star"></i>
@@ -276,113 +567,6 @@
       <!-- steps section ends -->
 
       <!-- gallery section starts -->
-      <section class="gallery cultural-accent" id="gallery">
-        <h1 class="heading">Our Food Gallery</h1>
-
-        <div class="box-container">
-          <div class="box fade-in">
-            <img src="/images/g-1.jpg" alt="Tasty Food" />
-            <div class="content">
-              <h3>Tasty Food</h3>
-              <p>
-                We are committed to provide you with an exceptional food
-                experience.
-              </p>
-              <a href="#order" class="btn">Order Now</a>
-            </div>
-          </div>
-          <div class="box fade-in">
-            <img src="/images/biryani.jpg" alt="Tasty Food" />
-            <div class="content">
-              <h3>Tasty Food</h3>
-              <p>
-                We are committed to provide you with an exceptional food
-                experience
-              </p>
-              <a href="#order" class="btn">Order Now</a>
-            </div>
-          </div>
-          <div class="box fade-in">
-            <img src="/images/TandooriChicken.jpg" alt="Tasty Food" />
-            <div class="content">
-              <h3>Tasty Food</h3>
-              <p>
-                We are committed to provide you with an exceptional food
-                experience
-              </p>
-              <a href="#order" class="btn">Order Now</a>
-            </div>
-          </div>
-          <div class="box fade-in">
-            <img src="/images/gulab_jaamun.jpeg" alt="Tasty Food" />
-            <div class="content">
-              <h3>Tasty Food</h3>
-              <p>
-                We are committed to provide you with an exceptional food
-                experience
-              </p>
-              <a href="#order" class="btn">Order Now</a>
-            </div>
-          </div>
-          <div class="box fade-in">
-            <img src="/images/butterchicken.png" alt="Tasty Food" />
-            <div class="content">
-              <h3>Tasty Food</h3>
-              <p>
-                We are committed to provide you with an exceptional food
-                experience
-              </p>
-              <a href="#order" class="btn">Order Now</a>
-            </div>
-          </div>
-          <div class="box fade-in">
-            <img src="/images/g-7.jpg" alt="Tasty Food" />
-            <div class="content">
-              <h3>Tasty Food</h3>
-              <p>
-                We are committed to provide you with an exceptional food
-                experience
-              </p>
-              <a href="#order" class="btn">Order Now</a>
-            </div>
-          </div>
-          <div class="box fade-in">
-            <img src="/images/thakali.png" alt="Tasty Food" />
-            <div class="content">
-              <h3>Tasty Food</h3>
-              <p>
-                We are committed to provide you with an exceptional food
-                experience
-              </p>
-              <a href="#order" class="btn">Order Now</a>
-            </div>
-          </div>
-          <div class="box fade-in">
-            <img src="/images/panipuri.jpeg" alt="Tasty Food" />
-            <div class="content">
-              <h3>Tasty Food</h3>
-              <p>
-                We are committed to provide you with an exceptional food
-                experience
-              </p>
-              <a href="#order" class="btn">Order Now</a>
-            </div>
-          </div>
-          <div class="box fade-in">
-            <img src="/images/friedrice.jpeg" alt="CGU Food Court" />
-            <div class="content">
-              <h3>CGU Food Court</h3>
-              <p>
-                We are committed to provide you with an exceptional food
-                experience
-              </p>
-              <a href="#order" class="btn">Order Now</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- gallery section ends -->
 
       <!-- review section starts -->
       <section class="review cultural-accent" id="review">
@@ -636,93 +820,5 @@
         alt="Loading"
       />
     </div>
-
-    <script>
-      // Menu toggle
-      const menuBar = document.getElementById("menu-bar");
-      const navbar = document.querySelector(".navbar");
-
-      menuBar.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-      });
-
-      // Close menu when clicking on links
-      document.querySelectorAll(".navbar a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navbar.classList.remove("active");
-        });
-      });
-
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      });
-
-      // Loader
-      window.addEventListener("load", () => {
-        const loader = document.querySelector(".loader-container");
-        if (loader) {
-          loader.style.opacity = "0";
-          setTimeout(() => {
-            loader.style.display = "none";
-          }, 500);
-        }
-
-        // Add fade-in class to elements
-        document.querySelectorAll(".fade-in").forEach((el) => {
-          el.style.opacity = "1";
-        });
-      });
-
-      // Scroll to top button
-      const scrollTop = document.getElementById("scroll-top");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-          scrollTop.style.display = "grid";
-        } else {
-          scrollTop.style.display = "none";
-        }
-      });
-
-      // Form submission
-      document.querySelector("form").addEventListener("submit", (e) => {
-        e.preventDefault();
-        alert("Thank you for your order! We will contact you soon.");
-      });
-
-      // Add some interactive effects
-      document.querySelectorAll(".box").forEach((box) => {
-        box.addEventListener("mouseenter", () => {
-          box.style.transform = "translateY(-8px) rotateX(5deg)";
-        });
-
-        box.addEventListener("mouseleave", () => {
-          box.style.transform = "translateY(0) rotateX(0)";
-        });
-      });
-
-      // Navbar scroll effect
-      window.addEventListener("scroll", () => {
-        const header = document.querySelector("header");
-        if (window.scrollY > 100) {
-          header.style.background =
-            "linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.95))";
-          header.style.boxShadow = "0 4px 20px rgba(0,0,0,.1)";
-        } else {
-          header.style.background =
-            "linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.85))";
-          header.style.boxShadow = "none";
-        }
-      });
-    </script>
   </body>
 </html>
